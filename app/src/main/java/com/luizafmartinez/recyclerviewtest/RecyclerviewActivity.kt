@@ -2,6 +2,7 @@ package com.luizafmartinez.recyclerviewtest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerviewActivity : AppCompatActivity() {
@@ -12,22 +13,17 @@ class RecyclerviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recyclerview)
 
-        val lista = listOf<String>()
+        val lista = listOf("Jamilton","Ana","Maria","Pedro")
 
         rvLista = findViewById(R.id.rv_lista)
 
         //Configurar o adapter:
         //===============================================================
-        rvLista.adapter = MensagemAdapter() //Tipo: MensagemAdapter , Adapter
+        rvLista.adapter = MensagemAdapter(lista) //Tipo: MensagemAdapter , Adapter
 
         //Configurar o layoutManager:
         //===============================================================
-        //rvLista.layoutManager   //Define o layout que vamos utilizar
-
-
-
-
-
+        rvLista.layoutManager = LinearLayoutManager(this) //Define o layout que vamos utilizar
 
     }
 }

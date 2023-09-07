@@ -3,6 +3,7 @@ package com.luizafmartinez.recyclerviewtest
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
@@ -17,8 +18,10 @@ class MensagemAdapter(
     inner class MensagemViewHolder(
         val itemView: View
     ) : ViewHolder(itemView) {
+        val textNome: TextView = itemView.findViewById(R.id.text_nome)
+        val textUltima: TextView = itemView.findViewById(R.id.text_ultima)
+        val textHorario: TextView = itemView.findViewById(R.id.text_horario)
     }
-
     //onCreateViewHolder - Ao criar o ViewHolder - Criar a visualização
     // Converter o item_lista.xml para o tipo View
     // A partir do xml, cria uma view sempre que for necessário.
@@ -35,8 +38,11 @@ class MensagemAdapter(
         return MensagemViewHolder( itemView )
     }
 
-    override fun onBindViewHolder(holder: MensagemViewHolder, position: Int) {
-        TODO("Not yet implemented")
+    //onBindViewHolder -> Ao vincular o ViewHolder
+    //Pega os dados e vincula em cada item de lista. É onde vai exibir os dados.
+    override fun onBindViewHolder(mensagemViewHolder: MensagemViewHolder, position: Int) {
+        val nome = lista[position]
+        mensagemViewHolder.textNome.text = nome
     }
 
     //GetItemCount -> Recupera a quantidade de itens
