@@ -13,7 +13,14 @@ class RecyclerviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recyclerview)
 
-        val lista = listOf("Jamilton","Ana","Maria","Pedro")
+        //val lista = listOf("Jamilton","Ana","Maria","Pedro")
+
+        val lista = listOf(
+            Mensagem("Jamilton","Olá, tudo bem ?","10:45"),
+            Mensagem("Ana","Te vi ontem...","00:45"),
+            Mensagem("Maria","Não acredito...","06:03"),
+            Mensagem("Pedro","Futebol hoje ?","15:32"),
+        )
 
         rvLista = findViewById(R.id.rv_lista)
 
