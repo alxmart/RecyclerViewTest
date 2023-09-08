@@ -2,6 +2,7 @@ package com.luizafmartinez.recyclerviewtest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -17,7 +18,7 @@ class RecyclerviewActivity : AppCompatActivity() {
 
         val lista = listOf(
             Mensagem("Jamilton","Olá, tudo bem ?","10:45"),
-            Mensagem("Ana","Te vi ontem...","00:45"),
+            Mensagem("Ana","Te vi ontem... Lorem ipsum dolorem sit amet, dolor sit amet ipsum","00:45"),
             Mensagem("Maria","Não acredito...","06:03"),
             Mensagem("Pedro","Futebol hoje ?","15:32"),
         )
@@ -30,7 +31,30 @@ class RecyclerviewActivity : AppCompatActivity() {
 
         //Configurar o layoutManager:
         //===============================================================
-        rvLista.layoutManager = LinearLayoutManager(this) //Define o layout que vamos utilizar
+
+
+        //LinearLayoutManager ( Configurar via XML e via Código ) Define o layout que vamos utilizar
+        /*rvLista.layoutManager = LinearLayoutManager(
+            this,
+            RecyclerView.VERTICAL,
+            false
+        ) */
+
+        //GridLayoutManager
+        /*rvLista.layoutManager = GridLayoutManager(
+            this,
+            2
+        )*/
 
     }
 }
+
+
+
+
+
+
+
+
+
+

@@ -20,7 +20,7 @@ class MensagemAdapter(
     ) : ViewHolder(itemView) {
         val textNome: TextView = itemView.findViewById(R.id.text_nome)
         val textUltima: TextView = itemView.findViewById(R.id.text_ultima)
-        val textHorario: TextView = itemView.findViewById(R.id.text_horario)
+        //val textHorario: TextView = itemView.findViewById(R.id.text_horario)
     }
     //onCreateViewHolder - Ao criar o ViewHolder - Criar a visualização
 
@@ -46,7 +46,7 @@ class MensagemAdapter(
         val mensagem = lista[position]
         mensagemViewHolder.textNome.text = mensagem.nome
         mensagemViewHolder.textUltima.text = mensagem.ultima
-        mensagemViewHolder.textHorario.text = mensagem.horario
+        //mensagemViewHolder.textHorario.text = mensagem.horario
     }
 
     //GetItemCount -> Recupera a quantidade de itens
