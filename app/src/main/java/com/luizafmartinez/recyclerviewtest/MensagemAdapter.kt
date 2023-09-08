@@ -18,8 +18,11 @@ class MensagemAdapter(
     inner class MensagemViewHolder(
         val itemView: View
     ) : ViewHolder(itemView) {
-        val textNome: TextView = itemView.findViewById(R.id.text_nome)
-        val textUltima: TextView = itemView.findViewById(R.id.text_ultima)
+        val textNome: TextView = itemView.findViewById(R.id.text_card_nome)
+        val textUltima: TextView = itemView.findViewById(R.id.text_card_ultima)
+
+        //val textNome: TextView = itemView.findViewById(R.id.text_nome)
+        //val textUltima: TextView = itemView.findViewById(R.id.text_ultima)
         //val textHorario: TextView = itemView.findViewById(R.id.text_horario)
     }
     //onCreateViewHolder - Ao criar o ViewHolder - Criar a visualização
@@ -31,11 +34,16 @@ class MensagemAdapter(
             parent.context
         )
         // Pega o xml e converte em um objeto View:
-        val itemView = layoutInflater.inflate(
+        /*val itemView = layoutInflater.inflate(
             R.layout.item_lista, parent, false
             // O próprio RecyclerView faz para nós...
            // ... pega a view e anexa dentro do item do RecyclerView
+        )*/
+
+        val itemView = layoutInflater.inflate(
+            R.layout.item_cardview, parent, false
         )
+
         return MensagemViewHolder( itemView )
     }
 

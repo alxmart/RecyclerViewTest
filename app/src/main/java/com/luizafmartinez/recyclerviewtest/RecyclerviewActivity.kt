@@ -34,9 +34,15 @@ class RecyclerviewActivity : AppCompatActivity() {
         //===============================================================
 
         //StaggeredGridLayoutManager
-        rvLista.layoutManager = StaggeredGridLayoutManager(
+        /*rvLista.layoutManager = StaggeredGridLayoutManager(
             2,
             RecyclerView.VERTICAL
+        )*/
+
+        rvLista.layoutManager = LinearLayoutManager(
+            this,
+            RecyclerView.VERTICAL,
+            false
         )
 
         //LinearLayoutManager ( Configurar via XML e via Código ) Define o layout que vamos utilizar
