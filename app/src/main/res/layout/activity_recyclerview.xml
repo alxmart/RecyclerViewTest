@@ -21,8 +21,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
 
-        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-        app:spanCount="2"
 
         tools:itemCount="20"
         tools:listitem="@layout/item_lista" />
@@ -46,6 +44,5 @@ StaggeredGridLayout
 ====================
     app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
     app:spanCount="2"
-
 
 -->
