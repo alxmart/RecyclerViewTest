@@ -14,6 +14,13 @@ class RecyclerviewActivity : AppCompatActivity() {
 
     private lateinit var rvLista: RecyclerView
 
+    private lateinit var mensagemAdapter: MensagemAdapter
+
+   /* override fun onStart() {
+        super.onStart()
+        //Poderia buscar os dados atualizados apos user voltar para a tela
+    }*/
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recyclerview)
@@ -33,26 +40,21 @@ class RecyclerviewActivity : AppCompatActivity() {
         //===============================================================
         //Tipo: MensagemAdapter , Adapter
 
-        rvLista.adapter = MensagemAdapter( lista ) { nome ->
+        mensagemAdapter = MensagemAdapter { nome ->
             Toast.makeText(this, "Olá $nome", Toast.LENGTH_SHORT).show()
-
             val intent =  Intent(this, MainActivity::class.java)
             intent.putExtra("nome", nome)
-
-            startActivity(
-                intent
-           )
-
+            startActivity( intent )
         }
+
+        mensagemAdapter.atualizarListaDados(
+            lista
+        )
+
+        rvLista.adapter = mensagemAdapter
 
         //Configurar o layoutManager:
         //===============================================================
-
-        //StaggeredGridLayoutManager
-        /*rvLista.layoutManager = StaggeredGridLayoutManager(
-            2,
-            RecyclerView.VERTICAL
-        )*/
 
         rvLista.layoutManager = LinearLayoutManager(
             this,

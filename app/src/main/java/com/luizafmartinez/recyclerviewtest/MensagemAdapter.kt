@@ -20,8 +20,8 @@ class MensagemAdapter(
 
         private val listaMensagens = mutableListOf <Mensagem>()
 
-        fun atualizarListaDados() {
-
+        fun atualizarListaDados( lista:  List<Mensagem> ) {
+            listaMensagens.addAll( lista )
         }
 
     //Poderia fazer aqui:
