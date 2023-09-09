@@ -3,17 +3,15 @@ package com.luizafmartinez.recyclerviewtest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class RecyclerviewActivity : AppCompatActivity() {
 
     private lateinit var rvLista: RecyclerView
-
+    private lateinit var btnClique: Button
     private lateinit var mensagemAdapter: MensagemAdapter
 
    /* override fun onStart() {
@@ -27,7 +25,7 @@ class RecyclerviewActivity : AppCompatActivity() {
 
         //val lista = listOf("Jamilton","Ana","Maria","Pedro")
 
-        val lista = listOf(
+        val lista = mutableListOf(
             Mensagem("Jamilton","Olá, tudo bem ?","10:45"),
             Mensagem("Ana","Te vi ontem... Lorem ipsum dolorem sit amet, dolor sit amet ipsum. Lorem ipsum dolorem sit amet, dolor sit amet ipsum.","00:45"),
             Mensagem("Maria","Não acredito...","06:03"),
@@ -35,6 +33,7 @@ class RecyclerviewActivity : AppCompatActivity() {
         )
 
         rvLista = findViewById(R.id.rv_lista)
+        btnClique = findViewById(R.id.btn_clique)
 
         //Configurar o adapter:
         //===============================================================
@@ -62,6 +61,13 @@ class RecyclerviewActivity : AppCompatActivity() {
             false
         )
 
+        btnClique.setOnClickListener {
+            lista.add(
+                Mensagem("Nova Jamilton","Teste","17:12")
+            )
+            mensagemAdapter.atualizarListaDados( lista )
+        }
+
         /*rvLista.addItemDecoration(
             DividerItemDecoration(
                 this,
@@ -87,7 +93,6 @@ class RecyclerviewActivity : AppCompatActivity() {
             2,
             RecyclerView.VERTICAL
         )*/
-
 
     }
 }

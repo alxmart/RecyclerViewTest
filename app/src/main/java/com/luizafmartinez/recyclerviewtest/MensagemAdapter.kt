@@ -18,10 +18,12 @@ class MensagemAdapter(
     private val clique: (String) -> Unit            //Passar função lambda como parâmetro
 ) : Adapter<MensagemAdapter.MensagemViewHolder>() {
 
-        private val listaMensagens = mutableListOf <Mensagem>()
+        private var listaMensagens = mutableListOf <Mensagem>()
 
-        fun atualizarListaDados( lista:  List<Mensagem> ) {
-            listaMensagens.addAll( lista )
+        fun atualizarListaDados( lista: MutableList<Mensagem> ) {
+            //listaMensagens.addAll( lista )
+            listaMensagens = lista
+            notifyDataSetChanged()
         }
 
     //Poderia fazer aqui:
@@ -88,14 +90,14 @@ class MensagemAdapter(
     //Pega os dados e vincula em cada item de lista. É onde vai exibir os dados.
 
     override fun onBindViewHolder(holder: MensagemViewHolder, position: Int) {
-        val mensagem = lista[position]
+        val mensagem = listaMensagens[position]  //lista[position]
         holder.bind( mensagem )
     }
 
     //GetItemCount -> Recupera a quantidade de itens
 
     override fun getItemCount(): Int {
-        return lista.size
+        return listaMensagens.size               //return lista.size
     }
 
 }
