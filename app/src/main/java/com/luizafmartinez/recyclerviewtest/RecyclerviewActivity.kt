@@ -1,7 +1,10 @@
 package com.luizafmartinez.recyclerviewtest
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,7 +31,18 @@ class RecyclerviewActivity : AppCompatActivity() {
 
         //Configurar o adapter:
         //===============================================================
-        rvLista.adapter = MensagemAdapter(lista) //Tipo: MensagemAdapter , Adapter
+        //Tipo: MensagemAdapter , Adapter
+        rvLista.adapter = MensagemAdapter( lista ) { nome ->
+            Toast.makeText(this, "Olá $nome", Toast.LENGTH_SHORT).show()
+
+            val intent =  Intent(this, MainActivity::class.java)
+            intent.putExtra("nome", nome)
+
+            startActivity(
+                intent
+           )
+
+        }
 
         //Configurar o layoutManager:
         //===============================================================
@@ -44,6 +58,13 @@ class RecyclerviewActivity : AppCompatActivity() {
             RecyclerView.VERTICAL,
             false
         )
+
+        /*rvLista.addItemDecoration(
+            DividerItemDecoration(
+                this,
+                RecyclerView.VERTICAL
+            )
+        )*/
 
         //LinearLayoutManager ( Configurar via XML e via Código ) Define o layout que vamos utilizar
         /*rvLista.layoutManager = LinearLayoutManager(
@@ -67,13 +88,3 @@ class RecyclerviewActivity : AppCompatActivity() {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
