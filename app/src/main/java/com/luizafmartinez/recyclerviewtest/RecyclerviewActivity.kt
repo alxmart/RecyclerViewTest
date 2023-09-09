@@ -32,6 +32,7 @@ class RecyclerviewActivity : AppCompatActivity() {
         //Configurar o adapter:
         //===============================================================
         //Tipo: MensagemAdapter , Adapter
+
         rvLista.adapter = MensagemAdapter( lista ) { nome ->
             Toast.makeText(this, "Olá $nome", Toast.LENGTH_SHORT).show()
 

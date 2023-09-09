@@ -15,9 +15,14 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 //Adapter precisa saber qual é a classe que vai armazenar o item_lista.xml
 
 class MensagemAdapter(
-    private val lista: List<Mensagem>,
-    private val clique: (String) -> Unit //Passar função lambda como parâmetro
+    private val clique: (String) -> Unit            //Passar função lambda como parâmetro
 ) : Adapter<MensagemAdapter.MensagemViewHolder>() {
+
+        private val listaMensagens = mutableListOf <Mensagem>()
+
+        fun atualizarListaDados() {
+
+        }
 
     //Poderia fazer aqui:
     /*fun configurarClique() {
