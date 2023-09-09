@@ -20,6 +20,28 @@ class MensagemAdapter(
 
         private var listaMensagens = mutableListOf <Mensagem>()
 
+        fun executarOperacao() {
+
+            listaMensagens.add(
+                //0,  //specific position -> 0
+                Mensagem("Nova Pedro","Teste","17:12")
+            )
+
+            listaMensagens.add(
+               Mensagem("Nova Maria","Teste Maria","17:12")
+            )
+
+            listaMensagens.add(
+               Mensagem("Nova João","TesteJoão","17:12")
+            )
+
+            notifyItemRangeInserted(2,3)
+
+            //notifyItemInserted(2)    //0-Jamilton, 1-Ana, 2-Pedro
+            //notifyItemInserted( listaMensagens.size )
+            //notifyItemInserted( 0 )
+        }
+
         fun atualizarListaDados( lista: MutableList<Mensagem> ) {
             //listaMensagens.addAll( lista )
             listaMensagens = lista
