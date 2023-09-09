@@ -22,6 +22,17 @@ class MensagemAdapter(
 
         fun executarOperacao() {
 
+            listaMensagens[0] = Mensagem("Jamilton DAMASCENO","Deu tudo certo ?","11:45")
+            listaMensagens[1] = Mensagem("Ana","Olá, tudo bem ?","11:45")
+            notifyItemRangeChanged(0,2)
+
+       /*
+       listaMensagens[0] = Mensagem("Jamilton DAMASCENO","Deu tudo certo ?","11:45")
+       notifyItemChanged(0)
+        */
+
+
+            /*
             listaMensagens.add(
                 //0,  //specific position -> 0
                 Mensagem("Nova Pedro","Teste","17:12")
@@ -34,9 +45,9 @@ class MensagemAdapter(
             listaMensagens.add(
                Mensagem("Nova João","TesteJoão","17:12")
             )
+            */
 
-            notifyItemRangeInserted(2,3)
-
+            //notifyItemRangeInserted(2,3)
             //notifyItemInserted(2)    //0-Jamilton, 1-Ana, 2-Pedro
             //notifyItemInserted( listaMensagens.size )
             //notifyItemInserted( 0 )
