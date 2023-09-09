@@ -22,9 +22,15 @@ class MensagemAdapter(
 
         fun executarOperacao() {
 
+            listaMensagens.removeAt(1)
+            notifyItemRemoved(1)
+
+
+           /*
             listaMensagens[0] = Mensagem("Jamilton DAMASCENO","Deu tudo certo ?","11:45")
             listaMensagens[1] = Mensagem("Ana","Olá, tudo bem ?","11:45")
             notifyItemRangeChanged(0,2)
+            */
 
        /*
        listaMensagens[0] = Mensagem("Jamilton DAMASCENO","Deu tudo certo ?","11:45")
